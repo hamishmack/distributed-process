@@ -967,12 +967,12 @@ catch = Catch.catch
 -- | Lift 'Control.Exception.try'
 try :: Exception e => Process a -> Process (Either e a)
 try = Catch.try
-{-# DEPRECATED try "Use Control.Monad.Catch.mask_ instead" #-}
+{-# DEPRECATED try "Use Control.Monad.Catch.try instead" #-}
 
 -- | Lift 'Control.Exception.mask'
 mask :: ((forall a. Process a -> Process a) -> Process b) -> Process b
 mask = Catch.mask
-{-# DEPRECATED mask "Use Control.Monad.Catch.mask_ instead" #-}
+{-# DEPRECATED mask "Use Control.Monad.Catch.mask instead" #-}
 
 -- | Lift 'Control.Exception.mask_'
 mask_ :: Process a -> Process a
